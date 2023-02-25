@@ -2,8 +2,6 @@ mysql_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus p
 
 ereg* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh preg_* functions.
 
-mssql_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh SQLSRV atau PDO_SQLSRV.
-
 pg_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh PDO.
 
 mcrypt_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.2 dan digantikan oleh libsodium atau openssl.
@@ -29,8 +27,6 @@ set_time_limit() - Tidak disarankan digunakan di Laravel karena dapat mengakibat
 header() - Tidak disarankan digunakan di Laravel untuk mengirim header secara langsung karena dapat mengganggu eksekusi middleware atau response. Lebih baik menggunakan Response atau Middleware untuk mengatur header.
 
 die() atau exit() - Tidak disarankan digunakan di Laravel untuk menghentikan eksekusi secara tiba-tiba karena dapat mengganggu middleware atau response. Lebih baik menggunakan Exception atau Middleware yang lebih terstruktur.
-
-create_function() - Tidak disarankan digunakan di Laravel karena dapat memungkinkan untuk menghasilkan kode yang tidak aman
 
 extract() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan variabel terlalu banyak di dalam lingkup dan tidak mudah dipelihara. Lebih baik mengakses variabel secara langsung.
 
@@ -142,9 +138,7 @@ md5() - Tidak disarankan digunakan di Laravel pada password karena rentan terhad
 
 mysql_affected_rows() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder di Laravel.
 
-mysql_connect() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak
-
-digunakan di versi PHP terbaru dan tidak mendukung koneksi database yang aman. Lebih baik menggunakan database query builder atau ORM di Laravel.
+mysql_connect() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru dan tidak mendukung koneksi database yang aman. Lebih baik menggunakan database query builder atau ORM di Laravel.
 
 mysql_query() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru dan rentan terhadap serangan SQL injection. Lebih baik menggunakan database query builder atau ORM di Laravel.
 
@@ -176,8 +170,6 @@ similar_text() - Tidak disarankan digunakan di Laravel pada string besar karena 
 
 soundex() - Tidak disarankan digunakan di Laravel karena hasilnya tidak konsisten dan dapat menyebabkan masalah keamanan. Lebih baik menggunakan package khusus untuk menghasilkan hash yang lebih aman.
 
-split() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Le
-
 spliti() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti preg_split atau explode.
 
 sql_regcase() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti preg_quote.
@@ -199,3 +191,235 @@ strip_tags() - Tidak disarankan digunakan di Laravel untuk membersihkan HTML kar
 unserialize() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Symfony Serializer.
 
 system() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa.
+
+unpack() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk string yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti substr dan unpack.
+
+usleep() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah performa di server jika digunakan secara berlebihan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti sleep atau time_nanosleep.
+
+var_dump() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah performa jika digunakan secara berlebihan di aplikasi yang besar. Lebih baik menggunakan package khusus seperti Symfony VarDumper.
+
+vprintf() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk string yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti sprintf.
+
+wordwrap() - Tidak disarankan digunakan di Laravel untuk memotong teks karena dapat memakan waktu yang lama untuk string yang besar dan tidak bisa mengontrol posisi potongan. Lebih baik menggunakan package khusus seperti League\CommonMark.
+
+xml_parser_create() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan package khusus seperti PHP XML Parser atau DOMDocument.
+
+xml_parser_free() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan package khusus seperti PHP XML Parser atau DOMDocument.
+
+xml_parser_set_option() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan package khusus seperti PHP XML Parser atau DOMDocument.
+
+xml_parser_set_option() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan package khusus seperti PHP XML Parser atau DOMDocument.
+
+xmlrpc_decode() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_decode_request() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_encode() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_encode_request() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_get_type() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_is_fault() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_parse_method_descriptions() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_add_introspection_data() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_create() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_destroy() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_register_introspection_callback() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_register_method() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_set_type() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+xmlrpc_server_call_method() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Zend\XmlRpc atau phpxmlrpc.
+
+parse_ini_file() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk file yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Symfony Config.
+
+array_combine() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti array_map dan array_reduce.
+
+array_fill_keys() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti array_map dan array_reduce.
+
+array_intersect() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti array_diff dan array_udiff.
+
+array_key_exists() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti isset atau array_key_first.
+
+array_keys() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti foreach atau array_map.
+
+array_map() - Tidak disarankan digunakan di Laravel untuk fungsi yang kompleks karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_multisort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan sulit digunakan. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_pad() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti foreach atau array_fill.
+
+array_push() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti $array[] = $value.
+
+array_rand() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_reduce() - Tidak disarankan digunakan di Laravel untuk fungsi yang kompleks karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_reverse() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti foreach atau array_map.
+
+array_shift() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti array_slice atau unset.
+
+array_slice() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_splice() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_sum() - Tidak disarankan digunakan di Laravel untuk array yang besar karena dapat memakan waktu yang lama. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_unique() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_unshift() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti array_slice atau array_merge.
+
+array_values() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+arsort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar
+
+compact() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan hanya dapat digunakan untuk variabel tunggal. Lebih baik menggunakan array atau collection di Laravel.
+
+count() - Tidak disarankan digunakan di Laravel untuk array atau collection yang besar karena dapat memakan waktu yang lama. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti countBy() atau tap() di Laravel.
+
+current() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+each() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan sulit digunakan. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+end() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+extract() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan array atau collection di Laravel.
+
+in_array() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti contains() di Laravel.
+
+key() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+krsort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan rentan terhadap serangan keamanan. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+ksort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+list() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan hanya dapat digunakan untuk variabel tunggal. Lebih baik menggunakan array atau collection di Laravel.
+
+natcasesort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+natsort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+next() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+prev() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+reset() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+rsort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+shuffle() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+sizeof() - Tidak disarankan digunakan di Laravel untuk array atau collection yang besar karena dapat memakan waktu yang lama. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti countBy() atau tap() di Laravel.
+
+sort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+uasort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+uksort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+usort() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_diff_assoc() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti diffAssoc() di Laravel Collection.
+
+array_diff_key() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti diffKeys() di Laravel Collection.
+
+array_diff_uassoc() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti diffAssoc() di Laravel Collection.
+
+array_diff_ukey() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti diffKeys() di Laravel Collection.
+
+array_filter() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti filter() di Laravel Collection.
+
+array_intersect_assoc() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti intersectAssoc() di Laravel Collection.
+
+array_intersect_key() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti intersectKeys() di Laravel Collection.
+
+array_intersect_uassoc() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti intersectAssoc() di Laravel Collection.
+
+array_intersect_ukey() - Tidak disarankan digunakan di Laravel karena dapat memakan waktu yang lama untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti intersectKeys() di Laravel Collection.
+
+array_key_exists() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti has() di Laravel Collection.
+
+array_map() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti map() di Laravel Collection.
+
+array_merge() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti merge() di Laravel Collection.
+
+array_multisort() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti sort() di Laravel Collection.
+
+array_pad() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti pad() di Laravel Collection.
+
+array_pop() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_push() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_rand() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan tidak konsisten dalam memilih key. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_reduce() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti reduce() di Laravel Collection.
+
+array_replace() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti replace() di Laravel Collection.
+
+array_reverse() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_shift() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_slice() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti slice() di Laravel Collection.
+
+array_splice() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti splice() di Laravel Collection.
+
+array_sum() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti sum() di Laravel Collection.
+
+array_unique() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+array_unshift() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+arsort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+asort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+compact() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti only() di Laravel Collection.
+
+count() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti count() di Laravel Collection.
+
+current() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti first() di Laravel Collection.
+
+end() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti last() di Laravel Collection.
+
+explode() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti explode() di PHP atau str_split() di Laravel.
+
+file_exists() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti exists() di Laravel Filesystem.
+
+fopen() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti storage() di Laravel Filesystem.
+
+fread() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti read() di Laravel Filesystem.
+
+fwrite() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti write() di Laravel Filesystem.
+
+glob() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk direktori yang besar. Lebih baik menggunakan package khusus seperti Laravel Filesystem.
+
+in_array() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti contains()
+
+is_array() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti is_array() di PHP.
+
+is_numeric() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti is_numeric() di PHP.
+
+join() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti implode() di PHP atau join() di Laravel Collection.
+
+key() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti keys() di Laravel Collection.
+
+krsort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+ksort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+max() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti max() di Laravel Collection.
+
+min() - Tidak disarankan digunakan di Laravel karena kurang fleksibel dan sulit digunakan. Lebih baik menggunakan fungsi-fungsi yang dioptimalkan seperti min() di Laravel Collection.
+
+natcasesort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package khusus seperti Laravel Collection.
+
+natsort() - Tidak disarankan digunakan di Laravel karena tidak efisien untuk array yang besar dan kurang fleksibel. Lebih baik menggunakan package k
