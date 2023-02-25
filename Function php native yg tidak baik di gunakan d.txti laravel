@@ -1,0 +1,201 @@
+mysql_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh MySQLi atau PDO.
+
+ereg* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh preg_* functions.
+
+mssql_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh SQLSRV atau PDO_SQLSRV.
+
+pg_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh PDO.
+
+mcrypt_* functions - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.2 dan digantikan oleh libsodium atau openssl.
+
+imagecreatefromgif() - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.2 dan digantikan oleh imagecreatefromstring() dengan memeriksa tipe MIME file.
+
+$_GET dan $_POST - Tidak disarankan digunakan langsung di Laravel karena tidak aman. Lebih baik menggunakan request() helper atau dependency injection untuk mengakses data input.
+
+mysql_real_escape_string() - Tidak disarankan digunakan di Laravel karena telah dihapus pada PHP 7.0 dan digantikan oleh prepared statements.
+
+eval() - Tidak disarankan digunakan di Laravel karena tidak aman dan tidak diperlukan dalam sebagian besar kasus. Lebih baik menggunakan strategi pengkodean dan validasi yang aman.
+
+unserialize() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan kerentanan keamanan. Lebih baik menggunakan JSON atau format data yang lebih aman.
+
+print_r() - Tidak disarankan digunakan di Laravel untuk tujuan debug karena outputnya yang tidak terstruktur. Lebih baik menggunakan var_dump() atau dd().
+
+die() atau exit() - Tidak disarankan digunakan di Laravel karena dapat membuat aplikasi keluar secara tiba-tiba dan tidak ramah terhadap pengguna. Lebih baik menggunakan response() atau exception handling yang lebih terstruktur.
+
+ini_set() - Tidak disarankan digunakan di Laravel karena dapat mempengaruhi performa aplikasi secara keseluruhan. Lebih baik menggunakan file .env atau file konfigurasi aplikasi untuk mengatur konfigurasi.
+
+set_time_limit() - Tidak disarankan digunakan di Laravel karena dapat mengakibatkan timeout atau kerentanan keamanan. Lebih baik menggunakan konfigurasi timeout yang lebih terstruktur dan aman.
+
+header() - Tidak disarankan digunakan di Laravel untuk mengirim header secara langsung karena dapat mengganggu eksekusi middleware atau response. Lebih baik menggunakan Response atau Middleware untuk mengatur header.
+
+die() atau exit() - Tidak disarankan digunakan di Laravel untuk menghentikan eksekusi secara tiba-tiba karena dapat mengganggu middleware atau response. Lebih baik menggunakan Exception atau Middleware yang lebih terstruktur.
+
+create_function() - Tidak disarankan digunakan di Laravel karena dapat memungkinkan untuk menghasilkan kode yang tidak aman
+
+extract() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan variabel terlalu banyak di dalam lingkup dan tidak mudah dipelihara. Lebih baik mengakses variabel secara langsung.
+
+array_merge() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan data array tertimpa. Lebih baik menggunakan array_merge_recursive() atau operator +.
+
+count() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti count() atau countBy().
+
+in_array() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti contains() atau containsStrict().
+
+glob() - Tidak disarankan digunakan di Laravel pada direktori besar karena dapat memakan waktu yang lama. Lebih baik menggunakan Filesystem Class.
+
+unlink() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+chmod() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+file_get_contents() - Tidak disarankan digunakan di Laravel pada file besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Filesystem Class seperti get() atau getRemote().
+
+file_put_contents() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+file_exists() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+filesize() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+readdir() - Tidak disarankan digunakan di Laravel pada direktori besar karena dapat memakan waktu yang lama. Lebih baik menggunakan Filesystem Class.
+
+rmdir() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+mkdir() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+move_uploaded_file() - Tidak disarankan digunakan di Laravel pada aplikasi yang berjalan di banyak server karena dapat mengakibatkan masalah pada file sistem. Lebih baik menggunakan Filesystem Class.
+
+explode() - Tidak disarankan digunakan di Laravel pada string besar karena dapat memakan waktu yang lama. Lebih baik menggunakan preg_split() atau str_split().
+
+stripslashes() - Tidak disarankan digunakan di Laravel pada aplikasi yang dapat terkena serangan SQL injection karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan prepared statements.
+
+intval() - Tidak disarankan digunakan di Laravel pada aplikasi yang dapat terkena serangan SQL injection karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan prepared statements.
+
+floatval() - Tidak disarankan digunakan di Laravel pada aplikasi yang dapat terkena serangan SQL injection karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan prepared statements.
+
+addslashes() - Tidak disarankan digunakan di Laravel pada aplikasi yang dapat terkena serangan SQL injection karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan prepared statements.
+
+stripslashes() - Tidak disarankan digunakan di Laravel pada aplikasi yang dapat terkena serangan SQL injection karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan prepared statements.
+
+extract() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan. Lebih baik mengakses variabel secara langsung.
+
+call_user_func() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan Closure atau method call().
+
+call_user_func_array() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan Closure atau method call().
+
+array_udiff() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan metode Collection seperti diff() atau diffUsing().
+
+array_intersect() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan metode Collection seperti intersect() atau intersectBy().
+
+array_diff() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan metode Collection seperti diff() atau diffUsing().
+
+array_combine() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan metode Collection seperti combine().
+
+array_key_exists() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti has().
+
+max() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti max() atau maxBy().
+
+min() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti min() atau minBy().
+
+sort() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti sortBy() atau sortByDesc().
+
+usort() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti sort() atau sortBy().
+
+array_search() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti search() atau searchStrict().
+
+array_shift() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti shift().
+
+array_slice() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti slice().
+
+lit() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti split().
+
+array_walk() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan metode Collection seperti each().
+
+compact() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan variabel biasa.
+
+create_function() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan Closure.
+
+define() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan variabel biasa.
+
+error_reporting() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan konfigurasi environment atau file .env.
+
+eval() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa.
+
+extract() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan. Lebih baik mengakses variabel secara langsung.
+
+fgetcsv() - Tidak disarankan digunakan di Laravel pada file besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti readCsv().
+
+fputcsv() - Tidak disarankan digunakan di Laravel pada file besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti writeCsv().
+
+highlight_string() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan package khusus untuk highlighting syntax seperti PrismJS atau Highlight.js.
+
+import_request_variables() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan $_POST atau $_GET langsung.
+
+ini_set() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan konfigurasi environment atau file .env.
+
+is_a() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan instanceof.
+
+is_numeric() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja. Lebih baik menggunakan is_int() atau is_float().
+
+key_exists() - Tidak disarankan digunakan di Laravel pada array besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti has().
+
+ltrim() - Tidak disarankan digunakan di Laravel pada string besar karena dapat memakan waktu yang lama. Lebih baik menggunakan trim().
+
+md5() - Tidak disarankan digunakan di Laravel pada password karena rentan terhadap serangan hash collision. Lebih baik menggunakan fungsi hash() dengan algoritma yang lebih aman seperti SHA256 atau bcrypt.
+
+mysql_affected_rows() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder di Laravel.
+
+mysql_connect() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak
+
+digunakan di versi PHP terbaru dan tidak mendukung koneksi database yang aman. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+mysql_query() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru dan rentan terhadap serangan SQL injection. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+mysql_real_escape_string() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru dan rentan terhadap serangan SQL injection. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+mysql_select_db() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+parse_str() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan. Lebih baik menggunakan $_POST atau $_GET langsung.
+
+passthru() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa.
+
+pg_escape_string() - Tidak disarankan digunakan di Laravel karena fungsi ini hanya berlaku untuk PostgreSQL dan rentan terhadap serangan SQL injection. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+print() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti echo atau var_dump.
+
+printf() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah kinerja dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti echo atau var_dump.
+
+readfile() - Tidak disarankan digunakan di Laravel pada file besar karena dapat memakan waktu yang lama. Lebih baik menggunakan metode Collection seperti readFile().
+
+register_globals() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan variabel biasa.
+
+set_magic_quotes_runtime() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik mengaktifkan magic quotes di konfigurasi environment atau file .env.
+
+shell_exec() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa.
+
+show_source() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan package khusus untuk highlighting syntax seperti PrismJS atau Highlight.js.
+
+similar_text() - Tidak disarankan digunakan di Laravel pada string besar karena dapat memakan waktu yang lama. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti strpos atau strstr.
+
+soundex() - Tidak disarankan digunakan di Laravel karena hasilnya tidak konsisten dan dapat menyebabkan masalah keamanan. Lebih baik menggunakan package khusus untuk menghasilkan hash yang lebih aman.
+
+split() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Le
+
+spliti() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti preg_split atau explode.
+
+sql_regcase() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti preg_quote.
+
+sqlite_open() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+sqlite_popen() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+sqlite_query() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+sqlite_single_query() - Tidak disarankan digunakan di Laravel karena fungsi ini sudah tidak digunakan di versi PHP terbaru. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+sqlsrv_query() - Tidak disarankan digunakan di Laravel karena fungsi ini hanya berlaku untuk driver SQL Server dan rentan terhadap serangan SQL injection. Lebih baik menggunakan database query builder atau ORM di Laravel.
+
+strstr() - Tidak disarankan digunakan di Laravel pada string besar karena dapat memakan waktu yang lama. Lebih baik menggunakan fungsi-fungsi PHP biasa seperti strpos atau preg_match.
+
+strip_tags() - Tidak disarankan digunakan di Laravel untuk membersihkan HTML karena dapat menyebabkan masalah keamanan dan menghasilkan output yang tidak terduga. Lebih baik menggunakan package khusus seperti HtmlPurifier.
+
+unserialize() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan jika inputan tidak valid. Lebih baik menggunakan package khusus seperti Symfony Serializer.
+
+system() - Tidak disarankan digunakan di Laravel karena dapat menyebabkan masalah keamanan dan sulit dilacak. Lebih baik menggunakan fungsi-fungsi PHP biasa.
